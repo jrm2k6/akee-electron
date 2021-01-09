@@ -1,8 +1,8 @@
 {
   "name": "wdilt",
-  "productName": "What Did You Learn Today",
+  "productName": "Akee - What Did You Learn Today",
   "version": "0.0.1",
-  "description": "Electron application boilerplate based on React, React Router, Webpack, React Hot Loader for rapid application development",
+  "description": "Akee - App to track what you learn every day",
   "main": "./main.prod.js",
   "author": {
     "name": "Electron React Boilerplate Maintainers",
