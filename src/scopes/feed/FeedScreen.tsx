@@ -23,6 +23,15 @@ const localizer = dateFnsLocalizer({
   locales,
 });
 
+const formats = {
+  dateFormat: 'dd',
+  weekdayFormat: 'EEE',
+};
+
+const Toolbar = () => {
+  return <div>Toolbar</div>;
+};
+
 function FeedScreen() {
   const history = useHistory();
   const { entries } = useLogEntries();
@@ -39,11 +48,11 @@ function FeedScreen() {
 
   const ColoredDateCellWrapper = ({ children, value }) => {
     const isInFuture = isAfter(value, new Date());
-    let style = {};
+    const style = {
+      borderTop: '1px solid black',
+    };
     if (isInFuture) {
-      style = {
-        backgroundColor: '#e6e6e6',
-      };
+      style.backgroundColor = '#e6e6e6';
     }
     return React.cloneElement(React.Children.only(children), {
       style,
@@ -54,7 +63,6 @@ function FeedScreen() {
     <div>
       <TopMenu canGoBack={false} />
       <div style={{ flex: 1 }}>
-        <span>Feed</span>
         <Calendar
           localizer={localizer}
           events={events || []}
@@ -62,6 +70,7 @@ function FeedScreen() {
           startAccessor="start"
           endAccessor="end"
           style={{ height: 500 }}
+          dayPropGetter={() => ({ className: 'wdit-day-getter' })}
           selectable
           onSelectSlot={(e) => {
             const slot = e.slots[0];
@@ -101,7 +110,9 @@ function FeedScreen() {
           }}
           components={{
             dateCellWrapper: ColoredDateCellWrapper,
+            // toolbar: Toolbar,
           }}
+          formats={formats}
         />
       </div>
       <div>

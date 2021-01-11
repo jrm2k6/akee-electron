@@ -8,3 +8,42 @@ body {
   height: 100vh;
   font-family: Arial, Helvetica, Helvetica Neue, serif;
 }
+
+.wdit-day-getter {
+  border-left: none !important;
+  margin: 0 8px;
+}
+/* start overriding react-big-calendar styles */
+.rbc-date-cell {
+  text-align: left;
+  padding-top: 8px;
+  margin: 0 8px;
+}
+
+.rbc-month-view {
+  border: none;
+}
+
+.rbc-month-header {
+  padding-bottom: 16px;
+
+  .rbc-header {
+    text-align: left;
+    margin: 0 8px;
+  }
+}
+
+.rbc-header {
+  border: none !important;
+}
+
+.rbc-event {
+  background-color: red;
+  width: 90%;
+}
+
+.rbc-row-segment {
+  padding-left: 8px;
+}
+
+/* end overriding react-big-calendar styles */
